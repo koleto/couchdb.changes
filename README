@@ -1,0 +1,21 @@
+The plugin provide two methods:
+
+Bind an event handler to the database _changes longpoll feed. 
+
+$.couchdb.changes.database(database, callback)
+
+Usage:
+$.couchdb.changes.database("test", function(changes){
+	$('ul').append("<li>"+ changes.last_seq +"</li>");
+});
+
+Bind an event handler for monitoring of a specific document modefications. 
+
+$.couchdb.changes.document(database, document, callback)
+
+Usage;
+$.couchdb.changes.document("test", "test-doc", function(doc){
+	$('ul').append("<li>"+ doc._rev +"</li>");
+});
+
+
