@@ -1,4 +1,4 @@
-The plugin provide two methods:
+The plugin provides two methods:
 
 Bind an event handler to the database _changes longpoll feed. 
 
