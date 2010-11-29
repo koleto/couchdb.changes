@@ -24,6 +24,6 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
 - **$.couchdb.changes.document(database, document, callback):**
 <pre><code>
     $.couchdb.changes.document("test", "test-doc", function(doc){
-	 $('ul').append("<li>" + doc._rev + "</li>");
+         $('ul').append("<li>" + doc._rev + "</li>");
     });
 </code></pre>
