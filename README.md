@@ -14,14 +14,14 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
 
 # Usage
 
-- $.couchdb.changes.database(database, callback):
+- **$.couchdb.changes.database(database, callback):**
 <pre><code>
-$.couchdb.changes.database("test", function(changes){
+    $.couchdb.changes.database("test", function(changes){
 	$('ul').append("<li>" + changes.last_seq + "</li>");
-});
+    });
  </code></pre>
  
-- $.couchdb.changes.document(database, document, callback):
+- **$.couchdb.changes.document(database, document, callback):**
 <pre><code>
 $.couchdb.changes.document("test", "test-doc", function(doc){
 	$('ul').append("<li>" + doc._rev + "</li>");
