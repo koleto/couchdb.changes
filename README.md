@@ -12,8 +12,24 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
 
 - Add ability to select the [type of feed](http://wiki.apache.org/couchdb/HTTP_database_API) 
 
+# Usage
+
+- **$.couchdb.changes.database(database, callback):**
+<pre><code>
+    $.couchdb.changes.database("test", function(changes){
+         $('ul').append("<li>" + changes.last_seq + "</li>");
+    });
+ </code></pre>
+ 
+- **$.couchdb.changes.document(database, document, callback):**
+<pre><code>
+    $.couchdb.changes.document("test", "test-doc", function(doc){
+         $('ul').append("<li>" + doc._rev + "</li>");
+    });
+</code></pre>
+
 # Note 
-Stopped working on the pluggin because of the **jquery.couch.js** include changes [https://github.com/apache/couchdb/blob/trunk/share/www/script/jquery.couch.js#L233] feature as well: 
+Stopped working on the pluggin because of the **jquery.couch.js** include [changes] (https://github.com/apache/couchdb/blob/trunk/share/www/script/jquery.couch.js#L233) feature as well: 
 Note that this is not included in the plugin shipped with CouchDB 0.11.0!
 
 Here is a code snippet that shows how to use this:
@@ -32,21 +48,3 @@ Here is a code snippet that shows how to use this:
 	
 	
 </code></pre>
-
-
-# Usage
-
-- **$.couchdb.changes.database(database, callback):**
-<pre><code>
-    $.couchdb.changes.database("test", function(changes){
-         $('ul').append("<li>" + changes.last_seq + "</li>");
-    });
- </code></pre>
- 
-- **$.couchdb.changes.document(database, document, callback):**
-<pre><code>
-    $.couchdb.changes.document("test", "test-doc", function(doc){
-         $('ul').append("<li>" + doc._rev + "</li>");
-    });
-</code></pre>
-
