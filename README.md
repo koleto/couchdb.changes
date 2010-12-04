@@ -28,7 +28,7 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
     });
 </code></pre>
 
-#
+
 Stopped working on the pluggin because of the **jquery.couch.js** include [changes](https://github.com/apache/couchdb/blob/trunk/share/www/script/jquery.couch.js#L233) feature as well.
  
 **Note** that this is not included in the plugin shipped with CouchDB 0.11.0!
