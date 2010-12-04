@@ -12,6 +12,28 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
 
 - Add ability to select the [type of feed](http://wiki.apache.org/couchdb/HTTP_database_API) 
 
+# Note 
+Stopped working on the pluggin because of the **jquery.couch.js** include changes [https://github.com/apache/couchdb/blob/trunk/share/www/script/jquery.couch.js#L233] feature as well: 
+Note that this is not included in the plugin shipped with CouchDB 0.11.0!
+
+Here is a code snippet that shows how to use this:
+
+<pre><code>
+	
+	// database changes
+	$.couch.db('test').changes().onChange(function(resp){
+		console.log(resp);
+	});
+	
+	// include the documents
+	$.couch.db('test').changes(null, { "include_docs" : "true" }).onChange(function(resp){
+		console.log(resp);
+	});
+	
+	
+</code></pre>
+
+
 # Usage
 
 - **$.couchdb.changes.database(database, callback):**
@@ -27,3 +49,4 @@ A JQuery plugin for binding event handlers to the CouchDB _changes feed.
          $('ul').append("<li>" + doc._rev + "</li>");
     });
 </code></pre>
+
